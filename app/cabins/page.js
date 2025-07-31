@@ -1,7 +1,8 @@
-import Link from "next/link";
-import Navigation from "../components/Navigation";
+export const metadata = {
+  title: "Cabins",
+};
 
-export default function Page() {
+export default async function Page() {
   return (
     <div>
       <h1>Cabins page</h1>
