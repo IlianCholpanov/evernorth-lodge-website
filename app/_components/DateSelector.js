@@ -27,13 +27,17 @@ function DateSelector({ settings, cabin, bookedDates }) {
   // SETTINGS
   const { minBookingLength, maxBookingLength } = settings;
 
+  const handleSelect = (selectedRange) => {
+    if (selectedRange === undefined) return;
+    setRange(selectedRange);
+  };
+
   return (
     <div className="flex flex-col justify-between">
       <DayPicker
         className="pt-12 place-self-center"
         mode="range"
-        // onSelect={handleSelect}
-        onSelect={(range) => setRange(range)}
+        onSelect={handleSelect}
         selected={range}
         min={minBookingLength + 1}
         max={maxBookingLength}
